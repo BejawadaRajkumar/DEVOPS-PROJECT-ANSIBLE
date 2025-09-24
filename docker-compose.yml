@@ -6,7 +6,7 @@ services:
       MYSQL_ROOT_PASSWORD: Chaitu@3105
       MYSQL_DATABASE: melodystream
     ports:
-      - "3307:3306"
+      - "3309:3306"
     volumes:
       - mysql_data:/var/lib/mysql
     networks:
@@ -27,7 +27,7 @@ services:
     image: krishnachaitanya3105/docker-frontend-msp:latest
     container_name: react
     ports:
-      - "3000:80"
+      - "3001:80"
     depends_on:
       - backend
     restart: on-failure
