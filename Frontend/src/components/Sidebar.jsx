@@ -54,9 +54,15 @@ function Sidebar() {
         <h2 className="text-sm font-semibold text-light mb-4">PLAYLISTS</h2>
         <div className="space-y-2">
           {playlists.map((name, index) => (
-            <a key={index} href="#" className="block text-light hover:text-white">
-              {name}
-            </a>
+            name === 'Liked Songs' ? (
+              <Link key={index} to="/liked" className="block text-light hover:text-white">
+                {name}
+              </Link>
+            ) : (
+              <a key={index} href="#" className="block text-light hover:text-white">
+                {name}
+              </a>
+            )
           ))}
         </div>
       </div>

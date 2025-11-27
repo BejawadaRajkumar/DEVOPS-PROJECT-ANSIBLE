@@ -9,6 +9,7 @@ import Playlist from './pages/Playlist';
 import AdminDashboard from './pages/AdminDashboard';
 import Login from './pages/Login';
 import Trending from './pages/Trending';
+import LikedSongs from './pages/LikedSongs';
 import ProtectedRoute from './components/ProtectedRoute';
 
 
@@ -31,6 +32,7 @@ function App() {
                       <Route path="/" element={<Home />} />
                       <Route path="/search" element={<Search />} />
                       <Route path="/library" element={<Library />} />
+                      <Route path="/liked" element={<LikedSongs />} />
                       <Route path="/playlist/:id" element={<Playlist />} />
                       <Route path='/trending' element={<Trending/>}/>
                     </Routes>

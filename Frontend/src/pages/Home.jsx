@@ -29,7 +29,8 @@ function Home() {
     currentSrc,
     isPlaying,
     likedSongs,
-    setLikedSongs,
+    likeSong,
+    unlikeSong,
   } = useContext(PlayerContext);
 
   const [loading, setLoading] = useState(false);
@@ -155,9 +156,12 @@ function Home() {
 
   // Like/unlike handler (keeps your behavior)
   const toggleLike = (song) => {
-    setLikedSongs((prev) =>
-      prev && prev.some((s) => s.id === song.id) ? prev.filter((s) => s.id !== song.id) : [...(prev || []), song]
-    );
+    const isLiked = likedSongs && likedSongs.some((s) => s.id === song.id);
+    if (isLiked) {
+      unlikeSong(song);
+    } else {
+      likeSong(song);
+    }
   };
 
   // helper: find first available song across partitions (for PlayerBar play if nothing is loaded)
